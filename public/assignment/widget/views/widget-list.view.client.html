@@ -1,13 +1,13 @@
-<nav class="navbar vsk-page-navbar navbar-fixed-top">
+<nav class="navbar my-page-navbar navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-text pull-left">
             <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page">
-                <span class="glyphicon glyphicon-chevron-left vsk-glyphicon"></span>
+                <span class="glyphicon glyphicon-chevron-left my-glyphicon"></span>
             </a>
         </div>
         <div class="navbar-text pull-right">
             <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/new">
-                <span class="glyphicon glyphicon-plus vsk-glyphicon"></span>
+                <span class="glyphicon glyphicon-plus my-glyphicon"></span>
             </a>
         </div>
         <div class="navbar-header">
@@ -19,7 +19,7 @@
 <div class="container-fluid">
     <div ng-repeat="widget in model.widgets">
         <div ng-switch="widget.widgetType">
-            <div class="vsk-toolbar">
+            <div class="my-toolbar">
                 <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
                     <span class="glyphicon glyphicon-cog"></span>
                 </a>
@@ -43,16 +43,16 @@
     </div>
 </div>
 
-<nav class="navbar vsk-page-navbar navbar-fixed-bottom">
+<nav class="navbar my-page-navbar navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="navbar-header pull-left">
                 <a class="navbar-brand" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
-                    <span class="glyphicon glyphicon-triangle-right vsk-glyphicon"> </span></a>
+                    <span class="glyphicon glyphicon-triangle-right my-glyphicon"> </span></a>
                 <a class="navbar-brand" href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget">
-                    <span class="glyphicon glyphicon-eye-open vsk-glyphicon"> </span></a>
+                    <span class="glyphicon glyphicon-eye-open my-glyphicon"> </span></a>
         </div>
         <div class="navbar-header pull-right">
-            <a class="navbar-brand" href="#/user/{{model.userId}}"><span class="glyphicon glyphicon-user vsk-glyphicon-page"> </span></a>
+            <a class="navbar-brand" href="#/user/{{model.userId}}"><span class="glyphicon glyphicon-user my-glyphicon-page"> </span></a>
         </div>
     </div>
 </nav>
