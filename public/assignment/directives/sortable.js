@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module('Directives', [])
+        .module('directives', [])
         .directive('sortable', sortableDir);
 
     function sortableDir() {
