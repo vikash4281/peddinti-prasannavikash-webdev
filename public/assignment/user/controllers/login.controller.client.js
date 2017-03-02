@@ -15,11 +15,11 @@
 
         function login(user) {
             if(user==null) {
-                vm.error = "Enter a valid Username"
+                vm.error = "Enter a valid Username";
                 return;
             }
             if(user.password == null){
-                vm.error = "Please enter a valid password"
+                vm.error = "Please enter a valid password";
                 return;
             }
             var Promise = UserService
