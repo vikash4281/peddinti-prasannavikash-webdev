@@ -2,7 +2,7 @@
     angular
         .module("WebAppMaker")
         .controller("WidgetEditController", WidgetEditController);
-    
+
     function WidgetEditController($sce, $routeParams, WidgetService, $location) {
         var vm = this;
 
@@ -15,12 +15,12 @@
         function init() {
             WidgetService.findWidgetsByPageId(vm.pageId)
                 .success(function (widgets) {
-                vm.widgets = widgets;
-            });
+                    vm.widgets = widgets;
+                });
             WidgetService.findWidgetById(vm.wgId)
                 .success(function (widget) {
                     vm.widget = widget;
-                    if (vm.widget.width){
+                    if (vm.widget.width) {
                         vm.widget.width = parseInt(vm.widget.width.substring(-1));
                     }
                 })
@@ -28,6 +28,7 @@
                     vm.widget = null;
                 });
         }
+
         init();
 
         //event handlers
@@ -46,18 +47,18 @@
             var promise = WidgetService.deleteWidget(vm.wgId);
             promise
                 .success(function (success) {
-                    $location.url('/user/'+vm.userId+'/website/'+vm.websiteId+'/page/'+vm.pageId+'/widget');
+                    $location.url('/user/' + vm.userId + '/website/' + vm.websiteId + '/page/' + vm.pageId + '/widget');
                 })
                 .error(function (error) {
                     vm.error = "Unable to delete widget";
                 });
         }
 
-        function updateWidget(){
-            if(vm.widget.widgetType == 'HEADER' && (!vm.widget.text || !vm.widget.size)){
+        function updateWidget() {
+            if (vm.widget.widgetType == 'HEADER' && (!vm.widget.text || !vm.widget.size)) {
                 vm.error = "Text or Size cannot be empty";
                 return;
-            } else if((vm.widget.widgetType == 'IMAGE' || vm.widget.widgetType == 'YOUTUBE')) {
+            } else if ((vm.widget.widgetType == 'IMAGE' || vm.widget.widgetType == 'YOUTUBE')) {
                 if (!vm.widget.url) {
                     vm.error = "URL cannot be empty";
                     return;
@@ -68,11 +69,12 @@
             var promise = WidgetService.updateWidget(vm.wgId, vm.widget);
             promise
                 .success(function (success) {
-                    vm.error=null;
+                    vm.error = null;
                     vm.message = "Updated Successfully";
                 })
                 .error(function (error) {
                     vm.error = "Unable to update the widget";
                 });
+        }
     }
 })();
