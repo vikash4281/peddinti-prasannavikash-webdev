@@ -22,7 +22,7 @@
                 vm.error = "Please enter a valid password";
                 return;
             }
-            var Promise = UserService
+            var promise = UserService
                 .findUserByCredentials(user.username, user.password);
                 promise.success(function (user) {
                     if(user) {
