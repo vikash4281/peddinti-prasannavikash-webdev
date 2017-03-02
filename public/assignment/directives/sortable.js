@@ -5,6 +5,7 @@
 
     function sortableDir() {
         function linkFunc(scope, element) {
+            console.log("Sortable Dir");
             element
                 .sortable({
                     axis: 'y',
