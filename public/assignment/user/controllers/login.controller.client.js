@@ -22,13 +22,15 @@
                 vm.error = "Please enter a valid password"
                 return;
             }
-            var user = UserService
+            var Promise = UserService
                 .findUserByCredentials(user.username, user.password);
-            if(user) {
-                $location.url("/user/"+user._id);
-            } else {
-                vm.error = "User not found in our records, try again !";
-            }
+                promise.success(function (user) {
+                    if(user) {
+                        $location.url("/user/"+user._id);
+                    } else {
+                        vm.error = "check username and try again";
+                }
+            });
         }
     }
 })();

@@ -11,8 +11,12 @@
         function init() {
             vm.websiteId = websiteId;
             vm.userId = userId;
+            PageService
+                .findPageByWebsiteId(websiteId)
+                .success(function (pages) {
+                    vm.pages = pages;
+                });
 
-            vm.pages = PageService.findPageByWebsiteId(websiteId);
         }
         init();
     }

@@ -16,9 +16,9 @@
     </div>
 </nav>
 
-<div class="container-fluid">
+<div sortable class="container-fluid">
     <div ng-repeat="widget in model.widgets">
-        <div ng-switch="widget.widgetType">
+        <div class="ui-state-default" ng-switch="widget.widgetType">
             <div class="my-toolbar">
                 <a href="#/user/{{model.userId}}/website/{{model.websiteId}}/page/{{model.pageId}}/widget/{{widget._id}}">
                     <span class="glyphicon glyphicon-cog"></span>

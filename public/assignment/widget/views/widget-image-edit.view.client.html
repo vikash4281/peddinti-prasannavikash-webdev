@@ -1,5 +1,5 @@
 <div class="container-fluid" ng-controller="WidgetEditController">
-
+    <form action="/api/upload" method="post" enctype="multipart/form-data">
     <label for="name">Name</label>
     <input ng-model="model.widget.name" id="name"
            class="form-control"
@@ -22,17 +22,26 @@
     <input ng-model="model.widget.width"
            id="width"
            type="number"
+           name="width"
            class="form-control"
            placeholder="100%"/>
 
-    <label for="upload">Upload</label>
+    <label for="myFile">Upload</label>
     <input ng-model="model.widget.upload"
-           id="upload"
+           name="myFile"
+           id="myFile"
            class="form-control"
            type="file"
            placeholder="Header Text"/>
 
-    <a href="#" class="btn btn-primary btn-block">Upload Image</a>
-    <a ng-click="model.deleteWidget(model.widget)" class="btn btn-danger btn-block">Delete</a>
+        <input  name="widgetId" value="{{model.widget._id}}"   style="display: none"/>
+        <input  name="userId" value="{{model.userId}}"   style="display: none"/>
+        <input  name="pageId" value="{{model.pageId}}"   style="display: none"/>
+        <input  name="websiteId" value="{{model.websiteId}}"   style="display: none"/>
+        <button type="submit" class="btn btn-primary btn-block">
+            Upload Image</button>
+
+        <a ng-click="model.deleteWidget(model.widget)" class="btn btn-danger btn-block">Delete</a>
+    </form>
 
 </div>

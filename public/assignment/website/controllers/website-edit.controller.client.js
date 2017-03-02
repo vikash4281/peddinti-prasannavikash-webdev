@@ -9,11 +9,20 @@
         function init() {
             var userId = $routeParams.uid;
             var websiteId = $routeParams.wid;
-            var websites = WebsiteService.findWebsitesByUser(userId);
+            WebsiteService.findWebsitesByUser(userId)
+                .success(function (sites) {
+                    console.log(sites);
+                    vm.websites = sites;
+                });
 
-            vm.websites = websites;
             vm.userId = userId;
-            vm.website = WebsiteService.findWebsiteById(websiteId);
+            WebsiteService.findWebsiteById(websiteId)
+                .success(function (site) {
+                    vm.website =  site;
+                })
+                .error(function (error) {
+                    vm.website = null;
+                });
         }
         init();
 
@@ -23,12 +32,14 @@
 
         // delete method
         function deleteWebsite() {
-            var success = WebsiteService.deleteWebsite(vm.website._id);
-            if (success) {
-                $location.url("/user/"+vm.userId+"/website");
-            } else {
-                vm.error = "Unable to delete the website";
-            }
+            var promise = WebsiteService.deleteWebsite(vm.website._id);
+            promise
+                .success(function (success) {
+                    $location.url("/user/"+vm.userId+"/website");
+                })
+                .error(function (error) {
+                    vm.error = "Unable to delete the website";
+                });
         }
 
         // update website method

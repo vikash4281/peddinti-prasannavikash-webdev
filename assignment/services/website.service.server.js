@@ -53,16 +53,14 @@ module.exports = function (app) {
         website.developerId = userId;
         website.update = new Date();
         websites.push(website);
-        //console.log(website);
+
         res.json(website);
     }
 
     function findWebsiteById(req, res) {
         var websiteId = req.params.websiteId;
-        //console.log(websiteId);
         for(var w in websites) {
             if(websiteId == websites[w]._id) {
-                //console.log(websites[w]);
                 res.json(websites[w]);
                 return;
             }
@@ -78,7 +76,7 @@ module.exports = function (app) {
                 sites.push(websites[w]);
             }
         }
-        //console.log(sites);
+
         res.json(sites);
     }
 };

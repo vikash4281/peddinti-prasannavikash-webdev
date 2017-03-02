@@ -3,7 +3,7 @@
         .module("WebAppMaker")
         .controller("PageNewController", PageNewController);
     
-    function PageNewController($routeParams, PageService) {
+    function PageNewController($routeParams, PageService,$location) {
         // console.log("New Controller");
         var userId = $routeParams.uid;
         var websiteId = $routeParams.wid;
@@ -15,8 +15,11 @@
         function init() {
             vm.websiteId = websiteId;
             vm.userId = userId;
-
-            vm.pages = PageService.findPageByWebsiteId(websiteId);
+            PageService
+                .findPageByWebsiteId(websiteId)
+                .success(function (pages) {
+                    vm.pages = pages;
+                });
         }
         init();
 
@@ -26,13 +29,17 @@
                 vm.error = "Add page name";
                 return;
             }
-            var success = PageService.createPage(websiteId, page);
-            if (success){
-                vm.message = "Adding Successfull";
-                init();
-            } else{
-                vm.error = "Adding page failed, try again!";
-            }
+            page.developerId = userId;
+            page.updated = new Date();
+            var promise = PageService.createPage(websiteId, page);
+            promise
+                .success(function (success) {
+                    vm.message = "Adding Successfull";
+                    $location.url("/user/" + userId + "/website/"+websiteId+"/page");
+                })
+                .error(function (error) {
+                    vm.error = "Adding page failed, try again!";
+                });
         }
     }
 })();

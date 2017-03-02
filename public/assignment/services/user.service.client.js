@@ -30,22 +30,11 @@
         }
         
         function findUserById(userId) {
-            for(var u in users) {
-                if( users[u]._id == userId ) {
-                    return users[u];
-                }
-            }
-            return null;
+            return $http.get("/api/user/"+userId);
         }
 
         function findUserByCredentials(username, password) {
-            for(var u in users) {
-                if( users[u].username == username &&
-                    users[u].password == password ) {
-                    return users[u];
-                }
-            }
-            return null;
+            return $http.get("/api/user?username="+username+"&password="+password);
         }
     }
 })();
