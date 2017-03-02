@@ -7,6 +7,7 @@ module.exports = function (app) {
     app.get('/api/widget/:widgetId', findWidgetById);
     app.put('/api/widget/:widgetId', updateWidget);
     app.delete('/api/widget/:widgetId', deleteWidget);
+    app.put('/api/page/:pageId/widget', sortWidgets);
 
     var multer = require('multer'); // npm install multer --save
     var upload = multer({
@@ -124,5 +125,23 @@ module.exports = function (app) {
         widget.pageId = pageId;
         widgets.push(widget);
         res.json(widget);
+    }
+    function sortWidgets(req, res) {
+        var start = req.query.initial;
+        var end = req.query.final;
+        var pageId = req.params.pageId;
+        var counter = 0;
+        for(w in widgets) {
+            if (widgets[w].pageId == pageId && !widgets[w].editing) {
+                if (counter == start){
+                    start = w;
+                }
+                if (counter == end){
+                    end = w;
+                }
+                counter ++;
+            }
+        }
+        widgets.splice(end, 0, widgets.splice(start,1)[0]);
     }
 };
