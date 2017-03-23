@@ -31,7 +31,10 @@
                     } else {
                         vm.error = "check username and try again";
                 }
-            });
+            })
+                .error(function (err) {
+                    vm.error = "check username and try again";
+                });
         }
     }
 })();

@@ -21,10 +21,10 @@
         // event handlers
         vm.addWidget = addWidget;
 
-        function addWidget(widgetType) {
+        function addWidget(type) {
             var widget = {};
-            widget.widgetType = widgetType;
-            widget.editing=true;
+            widget.type = type;
+            widget.deletable=true;
             var promise = WidgetService.createWidget(vm.pageId, widget);
             promise.success(function (widget) {
                 $location.url('/user/'+vm.userId+'/website/'+vm.websiteId+'/page/'+vm.pageId+'/widget/'+widget._id);

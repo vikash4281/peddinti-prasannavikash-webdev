@@ -8,6 +8,7 @@
 
         function init() {
             vm.doYouTrustUrl = doYouTrustUrl;
+            vm.doYouTrustHTML = doYouTrustHTML;
             vm.userId = $routeParams.uid;
             vm.websiteId = $routeParams.wid;
             vm.pageId = $routeParams.pid;
@@ -27,6 +28,9 @@
             var id = urlParts[urlParts.length - 1];
             baseUrl += id;
             return $sce.trustAsResourceUrl(baseUrl);
+        }
+        function doYouTrustHTML(text) {
+            return $sce.trustAsHtml(text);
         }
 
     }

@@ -32,14 +32,14 @@
             var promise = WebsiteService.createWebsite(vm.userId, website);
             promise
                 .success(function (site) {
-                    if (site) {
                         vm.message = "Successfully added website";
                         //init();
                         $location.url("/user/" + userId + "/website/");
-                    }
-                    else
+                    })
+                    .error(function (err) {
                         vm.error = "adding website failed try again!";
-                });
+                    })
+
         }
     }
 })();
