@@ -1,14 +1,14 @@
 /**
  * Created by vicky on 3/1/2017.
  */
-module.exports = function (app) {
+module.exports = function (app, model) {
     app.post("/api/user", createUser);
     app.get("/api/user", findUser);
     app.get("/api/user/:userId", findUserById);
     app.put("/api/user/:userId", updateUser);
     app.delete("/api/user/:userId", deleteUser);
 
-    var userModel = require('./../model/user/user.model.server')();
+    var userModel = model.userModel; //require('./../model/user/user.model.server')();
     function createUser(req, res) {
         userModel
             .createUser(req.body)
