@@ -49,8 +49,18 @@ a:hover {
     color: black;
 }
 
+.top-margin {
+    margin-top: 10px;
+}
+.row-margin {
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 5px;
+}
+
 .my-toolbar {
     position: absolute;
+    z-index: 1;
     right: 15px;
     background-color: white;
     padding-left: 5px;
@@ -101,7 +111,9 @@ a:hover {
     color: white;
     background-color: rgba(0,0,0,0.2);
 }
-
+.widget {
+    padding-top: 5px;
+}
 
 .list-group {
     background-color: #363b3e;
