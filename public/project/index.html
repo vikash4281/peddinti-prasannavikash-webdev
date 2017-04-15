@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="NewsApp">
 <head>
-    <meta charset="UTF-8">
-    <title>Project Home Page</title>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
+
+    <link href="style.css" rel="stylesheet"/>
+
+    <script src="app.js"></script>
+    <script src="config.js"></script>
+
+    <!-- home page controller -->
+    <script src="home/controllers/home.page.controller.client.js"></script>
+
+    <script src="services/NewsService.client.js"></script>
 </head>
 <body>
-    <h1>Project Home Page</h1>
+
+<div ng-view></div>
 </body>
 </html>

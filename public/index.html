@@ -1,30 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Web Dev Course Home Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Prasanna Vikash</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h1>Web Dev Course Home Page</h1>
+<nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="#index-banner" class="black-text">Home</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#index-banner">About me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact-details">Contact me</a></li>
+        </ul>
 
-    <p>
-        Customize this home page to your linking.
-    </p>
+        <ul id="nav-mobile" class="side-nav">
+            <li><a href="#index-banner">About me</a></li>
+            <li><a href="##projects">Projects</a></li>
+            <li><a href="#contact-details">Contact me</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
 
-    <h2>Required links</h2>
-    <ul>
-        <li>
-            <a href="project/index.html">Project</a>
-        </li>
-        <li>
-            <a href="assignment/#/login">Assignment</a>
-        </li>
-        <li>
-            <a href="test/index.html">Test MongoDB</a>
-        </li>
-        <li>
-            <a href="https://github.com/vikash4281/peddinti-prasannavikash-webdev">Your public repository at GitHub.com</a>
-        </li>
-    </ul>
+<div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+        <div class="container">
+
+            <h1 class="header center" style="
+    padding-top: 40px;
+    padding-right: 160px;
+"> Prasanna Vikash</h1>
+            <div class="row center">
+                <h5 class="header " style="
+    padding-right: 150px;
+    margin-top: 0px;
+    padding-bottom: 100px;
+">I work on Data, Software, Analytics</h5>
+            </div>
+
+        </div>
+    </div>
+    <div class="parallax"><img src="IMG_2467%20(4).jpg" alt="Unsplashed background img 1"></div>
+</div>
+
+<div class="container">
+    <div class="section">
+
+        <div class="row">
+            <div class="col s12 center">
+                <h3><i class="mdi-content-send brown-text"></i></h3>
+                <h4>About me</h4>
+                <p class="left-align">
+                    I'm currently a graduate student pursuing my Masters in Computer Science at Northeastern
+                    University, Boston, USA. Key areas of expertise include : Data Analytics (R & Python) , Database Management(SQl, MongoDb),
+                    Web Development (MEAN Stack), Artificial Intellegence (NLP) and Software Engineering (C++, Java).
+                </p>       </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="parallax-container valign-wrapper" id="projects">
+
+    <div class="parallax"><img src="northeastern-campus.jpg" alt="Unsplashed background img 2"></div>
+</div>
+
+
+<div class="container">
+    <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">assignment_ind</i></h2>
+                    <h5 class="center">Authorship Attribution</h5>
+
+                    <p class="light">
+                        Designed and Programmed a Python code to find the author of an unknown text from a set of known authors
+                        using their previous works as training data.
+                    </p></div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">class</i></h2>
+                    <h5 class="center">Boston Housing Data Analysis</h5>
+
+                    <p class="light">
+                        Analysed the housing prices in Boston housing data set using Regression techniques and also compared
+                        various features using ggplot2 and dplyr packages in R.
+                    </p>  </div>
+            </div>
+            <a href="https://discoveryourplace.herokuapp.com/" class="black-text"> <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">room</i></h2>
+                    <h5 class="center">Discover Your City</h5>
+
+                    <p class="light">
+                        Designed and Developed a MEAN Stack  web application to find the nearest places that are popular in a certain location
+                        using FourSquare api.
+                    </p>
+                </div>
+            </div></a>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">spellcheck</i></h2>
+                    <h5 class="center">Brown Clustering</h5>
+
+                    <p class="light">
+                        Programmed a Python code for Brown Clustering Algorithm for grouping similar words together.
+                    </p></div>
+            </div>
+
+            <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">perm_scan_wifi</i></h2>
+                    <h5 class="center">Software Defined Networking</h5>
+
+                    <p class="light">
+                        Analyzed the performance of traditional GTP-U protocol with newly introduced
+                        Software Defined Networking in mobile networks .
+                    </p>  </div>
+            </div>
+
+            <a href="assignment/#/login" class="black-text"> <div class="col s12 m4">
+                <div class="icon-block">
+                    <h2 class="center brown-text"><i class="material-icons">mode_edit</i></h2>
+                    <h5 class="center">Web Development Assignment</h5>
+
+                    <p class="light">
+                        A MEAN Stack  web application that allows users to perform CRUD operations on their specific list of
+                        websites.
+                    </p>
+                </div>
+            </div>
+            </a>
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="parallax-container valign-wrapper" id="contact-details">
+    <div class="section no-pad-bot">
+        <div class="container">
+            <div class="row Vikash">
+                <h3 class="header col s12 light Vicky" style="
+    padding-left: 0px; ">Contact Details</h3>
+                <h5><i class="small material-icons">call</i> +1-857-389-3158</h5>
+                <h5><i class="small material-icons">email</i>peddinti.p@husky.neu.edu</h5>
+            </div>
+        </div>
+    </div>
+    <div class="parallax"><img src="68510309-contact-wallpapers.jpg" alt="Unsplashed background img 3"></div>
+</div>
+
+<footer class="page-footer teal">
+    <div class="container">
+        <div class="row white-text">
+            <h2>Connect with me</h2>
+            <h5> <a href="https://github.com/vikash4281" class="white-text">Github</a></h5>
+            <h5><a href="https://www.facebook.com/vikash4281" class="white-text">Facebook</a></h5>
+            <h5><a href="https://www.instagram.com/prasanna_vikash/?hl=en" class="white-text">Instagram</a></h5>
+            <h5><a href="https://www.linkedin.com/in/prasanna-vikash-peddinti-014289116/" class="white-text">Linkedin</a></h5>
+        </div>
+
+    </div>
+    <h3>&nbsp;</h3>
+</footer>
+
+
+<!--  Scripts-->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+
 </body>
 </html>
