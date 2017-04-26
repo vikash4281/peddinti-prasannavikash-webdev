@@ -2,7 +2,7 @@
     angular
         .module("WebAppMaker")
         .controller("LoginController", loginController);
-    
+
     function loginController($location, UserService) {
         var vm = this;
 
@@ -15,25 +15,24 @@
 
         function login(user) {
             if(user==null) {
-                vm.error = "Enter a valid Username";
+                vm.error = "Username required"
                 return;
             }
             if(user.password == null){
-                vm.error = "Please enter a valid password";
+                vm.error = "Password cannot be empty"
                 return;
             }
             var promise = UserService
                 .findUserByCredentials(user.username, user.password);
-            console.log(promise);
             promise.success(function (user) {
-                    if(user) {
-                        $location.url("/user/"+user._id);
-                    } else {
-                        vm.error = "check username and try again";
+                if(user) {
+                    $location.url("/user/"+user._id);
+                } else {
+                    vm.error = "User not found";
                 }
             })
                 .error(function (err) {
-                    vm.error = "check username and try again";
+                    vm.error = "User not found";
                 });
         }
     }
